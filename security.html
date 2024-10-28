@@ -6,9 +6,8 @@
     <meta charset="utf-8" />
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="../assets/img/logo/logo.png" />
-    <title>Coolmate.me</title>
+
+    <title>Account</title>
 
     <meta name="description" content="" />
 
@@ -136,22 +135,15 @@
                     <li class="menu-header small text-uppercase">
                         <span class="menu-header-text">INVENTORY</span>
                     </li>
+
+                    <!-- SUPPORT & FEEDBACK MANAGEMENT -->
+                    <li class="menu-header small text-uppercase">
+                        <span class="menu-header-text">SUPPORT & FEEDBACK</span>
+                    </li>
+
                     <!-- ACCOUNT  MANAGEMENT -->
                     <li class="menu-header small text-uppercase">
-                        <span class="menu-header-text">User & Account</span>
-                    </li>
-                    <li class="menu-item">
-                        <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons bx bx-user"></i>
-                            <div class="text-truncate" data-i18n="Account Settings">Users</div>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="list-user.html" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Account">Views</div>
-                                </a>
-                            </li>
-                        </ul>
+                        <span class="menu-header-text">Account</span>
                     </li>
                     <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
@@ -174,7 +166,11 @@
                                     <div class="text-truncate" data-i18n="Connections">Connections</div>
                                 </a>
                             </li>
-
+                            <li class="menu-item">
+                                <a href="change-password.html" class="menu-link">
+                                    <div class="text-truncate" data-i18n="">Change Password</div>
+                                </a>
+                            </li>
                         </ul>
                     </li>
                     <li class="menu-item">
@@ -198,36 +194,8 @@
                                     <div class="text-truncate" data-i18n="Basic">Forgot Password</div>
                                 </a>
                             </li>
-                            <li class="menu-item">
-                                <a href="security.html" class="menu-link">
-                                    <div class="text-truncate" data-i18n="">Security</div>
-                                </a>
-                            </li>
-                        </ul>
-                    <li class="menu-item">
-                        <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons bx bx-check-shield"></i>
-                            <div class="text-truncate" data-i18n="Account Settings">Roles & Permissions</div>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="role-list.html" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Account">Roles</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="permissions.html" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Notifications">Permission</div>
-                                </a>
-                            </li>
                         </ul>
                     </li>
-                    </li>
-                    <!-- SUPPORT & FEEDBACK MANAGEMENT -->
-                    <li class="menu-header small text-uppercase">
-                        <span class="menu-header-text">SUPPORT & FEEDBACK</span>
-                    </li>
-
 
                 </ul>
             </aside>
@@ -336,13 +304,147 @@
                 <!-- Content wrapper -->
                 <div class="content-wrapper">
                     <!-- Content -->
-
                     <div class="container-xxl flex-grow-1 container-p-y">
-                        <div class="row">
-                            <div class="col-xxl-8 mb-6 order-0">
-                                <h1>Content Here</h1>
+                        <div class="nav-align-top mt-5">
+                            <ul class="nav nav-pills flex-column flex-md-row mb-6">
+                                <li class="nav-item"><a class="nav-link" href="pages-account-settings-account.html"><i
+                                            class="bx-sm bx bx-user me-1_5"></i> Account</a></li>
+                                <li class="nav-item"><a class="nav-link active" href="javascript:void(0);"><i
+                                            class="bx-sm bx bx-lock-alt me-1_5"></i> Security</a></li>
+                                <li class="nav-item"><a class="nav-link" href="pages-account-settings-billing.html"><i
+                                            class="bx-sm bx bx-detail me-1_5"></i> Billing &amp; Plans</a></li>
+                                <li class="nav-item"><a class="nav-link"
+                                        href="pages-account-settings-notifications.html"><i
+                                            class="bx-sm bx bx-bell me-1_5"></i> Notifications</a></li>
+                                <li class="nav-item"><a class="nav-link"
+                                        href="pages-account-settings-connections.html"><i
+                                            class="bx-sm bx bx-link-alt me-1_5"></i> Connections</a></li>
+                            </ul>
+                        </div>
+                        <!-- Change Password -->
+                        <div class="card mb-6">
+                            <h5 class="card-header">Change Password</h5>
+                            <div class="card-body pt-1">
+                                <form id="formAccountSettings" method="GET" onsubmit="return false"
+                                    class="fv-plugins-bootstrap5 fv-plugins-framework" novalidate="novalidate">
+                                    <div class="row">
+                                        <div class="mb-6 col-md-3 form-password-toggle fv-plugins-icon-container">
+                                            <label class="form-label" for="currentPassword">Current Password</label>
+                                            <div class="input-group input-group-merge has-validation">
+                                                <input class="form-control" type="password" name="currentPassword"
+                                                    id="currentPassword" placeholder="············">
+                                                <span class="input-group-text cursor-pointer"><i
+                                                        class="bx bx-hide"></i></span>
+                                            </div>
+                                            <div
+                                                class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback">
+                                            </div>
+                                        </div>
+                                        <div class="mb-6 col-md-3 form-password-toggle fv-plugins-icon-container">
+                                            <label class="form-label" for="newPassword">New Password</label>
+                                            <div class="input-group input-group-merge has-validation">
+                                                <input class="form-control" type="password" id="newPassword"
+                                                    name="newPassword" placeholder="············">
+                                                <span class="input-group-text cursor-pointer"><i
+                                                        class="bx bx-hide"></i></span>
+                                            </div>
+                                            <div
+                                                class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback">
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-6 col-md-3 form-password-toggle fv-plugins-icon-container">
+                                            <label class="form-label" for="confirmPassword">Confirm New Password</label>
+                                            <div class="input-group input-group-merge has-validation">
+                                                <input class="form-control" type="password" name="confirmPassword"
+                                                    id="confirmPassword" placeholder="············">
+                                                <span class="input-group-text cursor-pointer"><i
+                                                        class="bx bx-hide"></i></span>
+                                            </div>
+                                            <div
+                                                class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="text-body">Password Requirements:</h6>
+                                    <ul class="ps-4 mb-0">
+                                        <li class="mb-4">Minimum 8 characters long - the more, the better</li>
+                                        <li class="mb-4">At least one lowercase character</li>
+                                        <li>At least one number, symbol, or whitespace character</li>
+                                    </ul>
+                                    <div class="mt-6">
+                                        <button type="submit" class="btn btn-primary me-3">Save changes</button>
+                                        <button type="reset" class="btn btn-label-secondary">Reset</button>
+                                    </div>
+                                    <input type="hidden">
+                                </form>
                             </div>
                         </div>
+                        <!--/ Change Password -->
+
+                        <!-- Two-steps verification -->
+                        <div class="card mb-6">
+                            <div class="card-body">
+                                <h5 class="mb-6">Two-steps verification</h5>
+                                <h5 class="mb-4 text-body">Two factor authentication is not enabled yet.</h5>
+                                <p class="w-75">Two-factor authentication adds an additional layer of security to your
+                                    account by requiring
+                                    more than just a password to log in.
+                                    <a href="javascript:void(0);" class="text-nowrap">Learn more.</a>
+                                </p>
+                                <button class="btn btn-primary mt-2" data-bs-toggle="modal"
+                                    data-bs-target="#enableOTP">Enable Two-Factor
+                                    Authentication</button>
+                            </div>
+                        </div>
+                        <!-- Modal -->
+                        <!-- Enable OTP Modal -->
+                        <div class="modal fade" id="enableOTP" tabindex="-1" aria-hidden="true" style="display: none;">
+                            <div class="modal-dialog modal-simple modal-enable-otp modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                        <div class="text-center mb-6">
+                                            <h4 class="mb-2">Enable One Time Password</h4>
+                                            <p>Verify Your Mobile Number for SMS</p>
+                                        </div>
+                                        <p>Enter your mobile phone number with country code and we will send you a
+                                            verification code.</p>
+                                        <form id="enableOTPForm"
+                                            class="row g-6 fv-plugins-bootstrap5 fv-plugins-framework"
+                                            onsubmit="return false" novalidate="novalidate">
+                                            <div class="col-12 fv-plugins-icon-container">
+                                                <label class="form-label" for="modalEnableOTPPhone">Phone Number</label>
+                                                <div class="input-group has-validation">
+                                                    <span class="input-group-text">US (+1)</span>
+                                                    <input type="text" id="modalEnableOTPPhone"
+                                                        name="modalEnableOTPPhone"
+                                                        class="form-control phone-number-otp-mask"
+                                                        placeholder="202 555 0111">
+                                                </div>
+                                                <div
+                                                    class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback">
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <button type="submit" class="btn btn-primary me-3">Submit</button>
+                                                <button type="reset" class="btn btn-label-secondary"
+                                                    data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+                                            </div>
+                                            <input type="hidden">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/ Enable OTP Modal -->
+
+                        <!-- /Modal -->
+
+                        <!--/ Two-steps verification -->
+
+
                     </div>
 
                     <!-- / Content -->
